@@ -1,0 +1,80 @@
+﻿@model ML.Cocteles
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <section>
+        <div class="row">
+            <div class="=col-md-12">
+                <h1 style="text-align:center; color:crimson; font-family:Elephant">THE COKTAID DB </h1>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h5 style="color:hotpink; font-family:'Bodoni MT'">SELECCIONE BUSCAR PARA UNA BÚSQUEDA RÁPIDA </h5>
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12">
+          @*  @*@using (Html.BeginForm("GetAll", "Libro", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="row">
+                    
+
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Nombre)
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-book"></i></span>
+                            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", @id = "txtNombre" })
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        @Html.LabelFor(model => model.Ingredientes)
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-book"></i></span>
+                            @Html.TextBoxFor(model => model.Ingredientes, new { @class = "form-control", @id = "txtNombre" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <div>
+                            <input type="submit" value="Buscar" class="btn btn-info" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="col-md-1 ">
+                            @Html.ActionLink("Agregar", "Form", "Libro", htmlAttributes: new { @class = "btn btn-success" })
+                        </div>
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+    <section>
+
+        <div class="row">
+            @foreach (ML.Cocteles libro in Model.Cocteless)
+            {
+
+                <div class="col-3">
+                    <div class="card" style="width: 18rem;">
+                    
+                    </div>
+                </div>
+                
+            }
+        </div>
+
+
+    </section>
+
+</div>

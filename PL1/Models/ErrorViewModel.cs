@@ -1,4 +1,4 @@
-namespace PL.Models
+namespace PL1.Models
 {
     public class ErrorViewModel
     {
