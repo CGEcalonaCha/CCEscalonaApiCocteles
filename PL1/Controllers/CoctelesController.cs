@@ -18,15 +18,16 @@ namespace PL1.Controllers
 
             {
                 client.BaseAddress = new Uri("https://www.thecocktaildb.com/api/json");
-                var responseTask = client.GetAsync("json/v1/1/search.php?s=" + letra);
+                var responseTask = client.GetAsync("json/v1/1/search.php?s=" );
                 responseTask.Wait();
                 var resultAPI = responseTask.Result;
                 if (resultAPI.IsSuccessStatusCode)
                 {
                     var readTask = resultAPI.Content.ReadAsStringAsync();
                     readTask.Wait();
-                    foreach (var resultItem in readTask.Result.)
+                    foreach (var resultItem in readTask.Result.ToArray())
                     {
+
                         ML.Cocteles resultItemList = Newtonsoft.Json.JsonConvert.DeserializeObject<ML.Cocteles>(resultItem.ToString());
                         coctele.Cocteless.Add(resultItemList);
                     }
